@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - AI README Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="brand">README.AI</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/form">Generate</a>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <div class="glass form-card">
+            <h2 style="margin-bottom: 2rem; text-align: center;">Project Details</h2>
+            <form id="readme-form">
+                <div class="form-group">
+                    <label for="project_name">Project Name</label>
+                    <input type="text" id="project_name" class="form-control" placeholder="e.g. My Awesome App"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Short Description</label>
+                    <textarea id="description" class="form-control" placeholder="What does this project do?"
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="features">Key Features (One per line)</label>
+                    <textarea id="features" class="form-control" placeholder="Feature 1&#10;Feature 2&#10;Feature 3"
+                        required></textarea>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="installation">Installation Steps (Optional)</label>
+                        <textarea id="installation" class="form-control" placeholder="npm install..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="usage">Usage Instructions (Optional)</label>
+                        <textarea id="usage" class="form-control" placeholder="python main.py..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tech_stack">Technology Stack</label>
+                    <input type="text" id="tech_stack" class="form-control"
+                        placeholder="e.g. Flask, React, SQLite, Gemini AI" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="author">Author Name</label>
+                        <input type="text" id="author" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="github_link">GitHub Repo Link (Optional)</label>
+                        <input type="url" id="github_link" class="form-control"
+                            placeholder="https://github.com/user/repo">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; justify-content: center; margin-top: 2rem;">
+                    <span class="loader"></span>
+                    <span class="btn-text">Generate README</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AI README Generator. All rights reserved.</p>
+        <div class="student-details">
+            <p>Academic Project Submission</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
